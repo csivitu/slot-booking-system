@@ -5,17 +5,17 @@ import Joi from 'joi';
 const Joigoose = joigoose(mongoose);
 
 const joiUserSchema = Joi.object({
-  email: Joi.string().required().meta({ unique: true }),
-  timeSlot: Joi.string().required().meta(),
+    email: Joi.string().required().meta({ unique: true }),
+    timeSlot: Joi.string().required().meta(),
 });
 
 const mongooseUserSchema = new mongoose.Schema(
-  Joigoose.convert(joiUserSchema),
+    Joigoose.convert(joiUserSchema),
 );
 
 const User = mongoose.model('User', mongooseUserSchema);
 
 export {
-  User,
-  joiUserSchema,
+    User,
+    joiUserSchema,
 };
