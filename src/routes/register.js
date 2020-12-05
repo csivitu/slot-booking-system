@@ -3,27 +3,33 @@ import Joi from 'joi';
 import regSchem from '../utils/regSchema.js';
 import Slot from '../db/models.js';
 
+function someFunctionToCreateInviteLink() {
+    return Promise.resolve('XXXX');
+}
+
 const router = new express.Router();
 
 router.post('/', async (req, res) => {
     try {
-        const { day, id, slot } = Joi.attempt(req.body, regSchem); // auth skipped
+        const { day, id, slot } = Joi.attempt(req.body, regSchem);
         const doc = await Slot.findOne({ day });
         if (!doc) {
             res.json({ status: 'failed', message: 'Error: day unavailable' });
         } else {
-            let slotAvailable = false;
+            let index;
             for (let i = 0; i < doc.slots.length; i += 1) {
                 const element = doc.slots[i];
                 if (element.duration === slot && element.maxRegs > element.regs.length) {
-                    element.maxRegs.push({ id, inviteLink: id }); // link
-                    slotAvailable = true;
+                    index = i;
                     break;
                 }
             }
-            if (slotAvailable) {
+
+            if (index) {
+                const link = await someFunctionToCreateInviteLink();
+                doc.slots[index].maxRegs.push({ id, inviteLink: link });
                 await doc.save();
-                res.json({ status: 'success', message: `inviteLink: ${id}` }); // link
+                res.json({ status: 'success', message: `inviteLink: ${link}` });
             } else {
                 res.json({ status: 'failed', message: 'Error: slot unavailable' });
             }
