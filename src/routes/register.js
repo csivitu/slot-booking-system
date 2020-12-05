@@ -24,7 +24,6 @@ router.post('/', async (req, res) => {
                     break;
                 }
             }
-
             if (index) {
                 const link = await someFunctionToCreateInviteLink();
                 doc.slots[index].maxRegs.push({ id, inviteLink: link });
