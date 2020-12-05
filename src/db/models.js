@@ -6,7 +6,7 @@ const Joigoose = joigoose(mongoose);
 
 const joiUserSchema = Joi.object({
   email: Joi.string().required().meta({ unique: true }),
-  timeSlot: Joi.date().required().meta({ unique: true }),
+  timeSlot: Joi.string().required().meta(),
 });
 
 const mongooseUserSchema = new mongoose.Schema(
