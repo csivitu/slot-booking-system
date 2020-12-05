@@ -1,0 +1,40 @@
+{
+  "name": "slot-booking-system",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "slot booking app for CSI-VIT gravitas events and ccs",
+  "main": "src/index.js",
+  "extension": "js",
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "start": "nodemon src/index.js",
+    "deploy:prod": "node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/csivitu/slot-booking-system.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/csivitu/slot-booking-system/issues"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
+  },
+  "homepage": "https://github.com/csivitu/slot-booking-system#readme",
+  "devDependencies": {
+    "eslint": "^7.15.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "husky": "^4.3.4",
+    "nodemon": "^2.0.6"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1"
+  }
+}
