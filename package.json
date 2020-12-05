@@ -35,6 +35,10 @@
   },
   "dependencies": {
     "dotenv": "^8.2.0",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "joi": "^17.3.0",
+    "joigoose": "^8.0.0",
+    "mongoose": "^5.11.4",
+    "simple-node-logger": "^18.12.24"
   }
 }

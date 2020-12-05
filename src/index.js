@@ -1,4 +1,5 @@
 import './misc/dotenv.js';
+import './db/init.js';
 import express from 'express';
 
 const app = express();
