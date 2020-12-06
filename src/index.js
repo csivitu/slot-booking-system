@@ -12,7 +12,8 @@ app.use(bodyParser.json());
 
 app.use(authorize({
 	secret: process.env.JWT_SECRET,
-	years: ['20'],
+	scope: ['csi', 'ccs'],
+
 }));
 
 app.use('/', registerRouter);
