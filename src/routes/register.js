@@ -40,7 +40,8 @@ router.post('/', async (req, res) => {
 
 router.get('/', async (req, res) => {
     try {
-        const data = await Slot.find();
+        const { day } = req.query;
+        const data = day ? await Slot.find({ day }) : await Slot.find();
         const response = [];
         data.forEach((doc) => {
             const document = { day: doc.day, slots: [] };
