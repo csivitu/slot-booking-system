@@ -3,6 +3,7 @@ import './db/init.js';
 import express from 'express';
 import jwt from 'jsonwebtoken';
 import registerRouter from './routes/register';
+import resetRouter from './routes/reset';
 
 const app = express();
 
@@ -25,6 +26,7 @@ app.use((req, res, next) => {
 });
 
 app.use(registerRouter, '/register');
+app.use(resetRouter, '/reset');
 const port = process.env.PORT || '3000';
 
 app.listen(port);

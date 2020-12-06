@@ -1,7 +1,7 @@
 import express from 'express';
 import Joi from 'joi';
 import regSchem from '../utils/regSchema.js';
-import Slot from '../db/models.js';
+import { Slot } from '../db/models.js';
 
 function someFunctionToCreateInviteLink() {
     return Promise.resolve('XXXX');

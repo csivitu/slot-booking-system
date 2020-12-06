@@ -38,4 +38,7 @@ const mongooseSlotSchema = new mongoose.Schema(
 
 const Slot = mongoose.model('Slot', mongooseSlotSchema);
 
-export default Slot;
+export {
+    Slot,
+    joiSlotSchema,
+};
