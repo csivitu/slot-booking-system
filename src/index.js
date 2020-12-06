@@ -2,8 +2,8 @@ import './misc/dotenv.js';
 import './db/init.js';
 import express from 'express';
 import jwt from 'jsonwebtoken';
-import registerRouter from './routes/register';
-import resetRouter from './routes/reset';
+import registerRouter from './routes/register.js';
+import resetRouter from './routes/reset.js';
 
 const app = express();
 
@@ -25,8 +25,8 @@ app.use((req, res, next) => {
     }
 });
 
-app.use(registerRouter, '/');
-app.use(resetRouter, '/reset');
+app.use('/', registerRouter);
+app.use('/reset', resetRouter);
 const port = process.env.PORT || '3000';
 
 app.listen(port);

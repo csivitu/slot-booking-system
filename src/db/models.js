@@ -6,10 +6,10 @@ const Joigoose = joigoose(mongoose);
 
 const joiSlotSchema = Joi.object({
     day: Joi.string().required().meta({ unique: true }),
-    slots: Joi.array(Joi.object({
+    slots: Joi.array().items(Joi.object({
         duration: Joi.string().required(),
         maxRegs: Joi.number().required(),
-        regs: Joi.array(Joi.object({
+        regs: Joi.array().items(Joi.object({
             id: Joi.string().required().meta({ unique: true }),
             inviteLink: Joi.string().required().meta({ unique: true }),
         })).required().default([]),
