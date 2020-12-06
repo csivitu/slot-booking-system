@@ -1,12 +1,13 @@
 import express from 'express';
 import Joi from 'joi';
+import authenticateToken from '../middlewares/authenticate';
 import regSchem from '../utils/regSchema.js';
 import { Slot } from '../db/models.js';
 import someFunctionToCreateInviteLink from '../utils/createInvite.js';
 
 const router = new express.Router();
 
-router.post('/', async (req, res) => {
+router.post('/', authenticateToken, async (req, res) => {
     try {
         const { day, id, slot } = Joi.attempt(req.body, regSchem);
         const doc = await Slot.findOne({ day });
@@ -35,7 +36,7 @@ router.post('/', async (req, res) => {
     }
 });
 
-router.get('/', async (req, res) => {
+router.get('/', authenticateToken, async (req, res) => {
     try {
         const { day } = req.query;
         const data = day ? await Slot.find({ day }) : await Slot.find();

@@ -1,10 +1,11 @@
 import express from 'express';
 import Joi from 'joi';
+import authenticateToken from '../middlewares/authenticate';
 import { Slot, joiSlotSchema } from '../db/models.js';
 
 const router = new express.Router();
 
-router.post('/', async (req, res) => {
+router.post('/', authenticateToken, async (req, res) => {
     try {
         if (req.body.id.slice(3) !== 'CSI') {
             res.json({ status: 'failed', message: 'Error: unauthorized' });

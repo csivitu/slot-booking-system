@@ -1,28 +1,23 @@
 import './misc/dotenv.js';
 import './db/init.js';
 import express from 'express';
-import jwt from 'jsonwebtoken';
+import bodyParser from 'body-parser';
+import cookieParser from 'cookie-parser';
+import authorize from 'csi-accounts-express';
 import registerRouter from './routes/register.js';
 import resetRouter from './routes/reset.js';
 
 const app = express();
 
-app.use((req, res, next) => {
-    if (!req.headers.authorization) {
-        res.json({ status: 'failed', error: 'Error: authorization token not found in headers' });
-    } else {
-        try {
-            const data = jwt.veryfy(process.env.JWT_SECRET, req.headers.authorization);
-            if (data.id) {
-                req.body.id = data.id;
-                next();
-            } else {
-                res.json({ status: 'failed', error: 'Error: unknown id' });
-            }
-        } catch (e) {
-            res.json({ status: 'failed', error: e.toString() });
-        }
-    }
+app.use(bodyParser.json());
+app.use(cookieParser());
+
+app.use((req, res) => {
+    authorize({
+        secret: process.env.JWT_SECRET,
+        token: (req, res) => res.session.token,
+    });
+    res.cookie('authcookie', token, { maxAge: 900000, httpOnly: true });
 });
 
 app.use('/', registerRouter);
