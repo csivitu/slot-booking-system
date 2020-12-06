@@ -9,7 +9,7 @@ const joiSlotSchema = Joi.object({
 	slots: Joi.array().items(Joi.object({
 		duration: Joi.string().required(),
 		maxRegs: Joi.number().required(),
-		regCount: Joi.number().required().default(0),
+		regCount: Joi.number().default(0),
 	})).required(),
 });
 
@@ -29,7 +29,7 @@ const mongooseUserSchema = new mongoose.Schema(
 );
 
 const Slot = mongoose.model('Slot', mongooseSlotSchema);
-const User = mongoose.model('Slot', mongooseUserSchema);
+const User = mongoose.model('User', mongooseUserSchema);
 
 export {
 	Slot,

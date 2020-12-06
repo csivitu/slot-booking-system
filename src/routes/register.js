@@ -25,7 +25,7 @@ router.post('/', async (req, res) => {
 					break;
 				}
 			}
-			if (index) {
+			if (index !== undefined) {
 				const inviteLink = await someFunctionToCreateInviteLink();
 				doc.slots[index].regCount += 1;
 				await User.create({
