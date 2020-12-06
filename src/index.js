@@ -12,13 +12,10 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cookieParser());
 
-app.use((req, res) => {
-    authorize({
-        secret: process.env.JWT_SECRET,
-        token: (req, res) => res.session.token,
-    });
-    res.cookie('authcookie', token, { maxAge: 900000, httpOnly: true });
-});
+app.use(authorize({
+	secret: process.env.JWT_SECRET,
+	years: ['20'],
+}));
 
 app.use('/', registerRouter);
 app.use('/reset', resetRouter);

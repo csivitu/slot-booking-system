@@ -5,15 +5,15 @@ import Joi from 'joi';
 const Joigoose = joigoose(mongoose);
 
 const joiSlotSchema = Joi.object({
-    day: Joi.string().required().meta({ unique: true }),
-    slots: Joi.array().items(Joi.object({
-        duration: Joi.string().required(),
-        maxRegs: Joi.number().required(),
-        regs: Joi.array().items(Joi.object({
-            id: Joi.string().required().meta({ unique: true }),
-            inviteLink: Joi.string().required().meta({ unique: true }),
-        })).required().default([]),
-    })).required(),
+	day: Joi.string().required().meta({ unique: true }),
+	slots: Joi.array().items(Joi.object({
+		duration: Joi.string().required(),
+		maxRegs: Joi.number().required(),
+		regs: Joi.array().items(Joi.object({
+			id: Joi.string().required().meta({ unique: true }),
+			inviteLink: Joi.string().required().meta({ unique: true }),
+		})).required().default([]),
+	})).required(),
 });
 
 // const exampleSlotDocument = {
@@ -33,12 +33,12 @@ const joiSlotSchema = Joi.object({
 // };
 
 const mongooseSlotSchema = new mongoose.Schema(
-    Joigoose.convert(joiSlotSchema),
+	Joigoose.convert(joiSlotSchema),
 );
 
 const Slot = mongoose.model('Slot', mongooseSlotSchema);
 
 export {
-    Slot,
-    joiSlotSchema,
+	Slot,
+	joiSlotSchema,
 };

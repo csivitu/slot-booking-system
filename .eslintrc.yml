@@ -9,6 +9,7 @@ parserOptions:
 rules:
   indent:
   - "error"
-  - 4
+  - "tab"
+  no-tabs: 0
   import/extensions: 0
   no-console: 0
