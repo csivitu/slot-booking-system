@@ -9,7 +9,7 @@ const joiSlotSchema = Joi.object({
 	slots: Joi.array().items(Joi.object({
 		duration: Joi.string().required(),
 		maxRegs: Joi.number().required(),
-		seatsAvailable: Joi.number().required().default(0),
+		regCount: Joi.number().required().default(0),
 	})).required(),
 });
 

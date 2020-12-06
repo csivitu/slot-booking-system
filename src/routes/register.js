@@ -20,14 +20,14 @@ router.post('/', async (req, res) => {
 			let index;
 			for (let i = 0; i < doc.slots.length; i += 1) {
 				const element = doc.slots[i];
-				if (element.duration === slot && element.seatsAvailable !== 0) {
+				if (element.duration === slot && element.maxRegs > element.regCount) {
 					index = i;
 					break;
 				}
 			}
 			if (index) {
 				const inviteLink = await someFunctionToCreateInviteLink();
-				doc.slots[index].seatsAvailable -= 1;
+				doc.slots[index].regCount += 1;
 				await User.create({
 					regNo, day, slot, inviteLink,
 				});
