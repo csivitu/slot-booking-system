@@ -38,4 +38,24 @@ router.post('/', async (req, res) => {
     }
 });
 
+router.get('/', async (req, res) => {
+    try {
+        const data = await Slot.find();
+        const response = [];
+        data.forEach((doc) => {
+            const document = { day: doc.day, slots: [] };
+            doc.slots.forEach((slot) => {
+                document.slots.push({
+                    slot: slot.duration,
+                    availableSeats: slot.maxRegs - slot.Regs.length,
+                });
+            });
+            response.push(document);
+        });
+        res.json({ status: 'success', data: response });
+    } catch (e) {
+        res.json({ status: 'failed', message: e.toString() });
+    }
+});
+
 export default router;

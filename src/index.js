@@ -25,7 +25,7 @@ app.use((req, res, next) => {
     }
 });
 
-app.use(registerRouter, '/register');
+app.use(registerRouter, '/');
 app.use(resetRouter, '/reset');
 const port = process.env.PORT || '3000';
 
