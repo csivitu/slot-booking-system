@@ -17,12 +17,24 @@ router.post('/', async (req, res) => {
 					throw err;
 				}
 			}
-			await Slot.create(...data);
-			res.json({ status: 'success', message: 'Success: resetted slots successfully' });
+			const response = await Slot.create(...data);
+			res.json({ status: 'success', data: response });
 		}
 	} catch (e) {
 		res.json({ status: 'failed', message: e.toString() });
 	}
 });
+
+// const body = {
+// 	data: [{
+// 		day: '6	dec	2020',
+// 		slots: [
+// 			{
+// 				duration: '11AM-12PM',
+// 				maxRegs: 3,
+// 			},
+// 		],
+// 	}],
+// };
 
 export default router;
