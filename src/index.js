@@ -27,6 +27,7 @@ app.use((req, res, next) => {
 
 app.use('/', registerRouter);
 app.use('/reset', resetRouter);
+
 const port = process.env.PORT || '3000';
 
 app.listen(port);
