@@ -4,23 +4,23 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/csivitu/slot-booking-app">
+  <a href="https://github.com/csivitu/slot-booking-system">
     <img src="https://csivit.com/images/favicon.png" alt="Logo" width="80">
   </a>
 
-  <h3 align="center">YOUR_TITLE</h3>
+  <h3 align="center">slot-booking-system</h3>
 
   <p align="center">
     A system to manage slots for CCS and other CSI events.
     <br />
-    <a href="https://github.com/csivitu/slot-booking-app"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/csivitu/slot-booking-system"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/csivitu/slot-booking-app">View Demo</a>
+    <a href="https://github.com/csivitu/slot-booking-system">View Demo</a>
     ·
-    <a href="https://github.com/csivitu/slot-booking-app/issues">Report Bug</a>
+    <a href="https://github.com/csivitu/slot-booking-system/issues">Report Bug</a>
     ·
-    <a href="https://github.com/csivitu/slot-booking-app/issues">Request Feature</a>
+    <a href="https://github.com/csivitu/slot-booking-system/issues">Request Feature</a>
   </p>
 </p>
 
@@ -45,7 +45,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-**slot-booking-app** is a smart solution to arrange discord meets for mass events like CCS. It automatically generate personalized discord invite links to achieve the same.
+**slot-booking-system** is a smart solution to arrange discord meets for mass events like CCS. It automatically generate personalized discord invite links to achieve the same.
 
 
 ### Built With
@@ -64,7 +64,7 @@ To get a local copy up and running follow these simple steps.
  
 1. Clone the repo
 ```sh
-git clone https://github.com/csivitu/slot-booking-app.git
+git clone https://github.com/csivitu/slot-booking-system.git
 ```
 2. Install NPM packages
 ```sh
@@ -108,7 +108,7 @@ yarn start
 <!-- ROADMAP -->
 ## Roadmap
 
-See the [open issues](https://github.com/csivitu/slot-booking-app/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/csivitu/slot-booking-system/issues) for a list of proposed features (and known issues).
 
 
 
@@ -137,5 +137,5 @@ Distributed under the MIT License. See [`LICENSE`](./LICENSE) for more informati
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [csivitu-shield]: https://img.shields.io/badge/csivitu-csivitu-blue
 [csivitu-url]: https://csivit.com
-[issues-shield]: https://img.shields.io/github/issues/csivitu/slot-booking-app.svg?style=flat-square
-[issues-url]: https://github.com/csivitu/slot-booking-app/issues
+[issues-shield]: https://img.shields.io/github/issues/csivitu/slot-booking-system.svg?style=flat-square
+[issues-url]: https://github.com/csivitu/slot-booking-system/issues
