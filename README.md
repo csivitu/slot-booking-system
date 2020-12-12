@@ -4,23 +4,23 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/csivitu/Template">
+  <a href="https://github.com/csivitu/slot-booking-app">
     <img src="https://csivit.com/images/favicon.png" alt="Logo" width="80">
   </a>
 
   <h3 align="center">YOUR_TITLE</h3>
 
   <p align="center">
-    YOUR_SHORT_DESCRIPTION
+    A system to manage slots for CCS and other CSI events.
     <br />
-    <a href="https://github.com/csivitu/Template"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/csivitu/slot-booking-app"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/csivitu/Template">View Demo</a>
+    <a href="https://github.com/csivitu/slot-booking-app">View Demo</a>
     ·
-    <a href="https://github.com/csivitu/Template/issues">Report Bug</a>
+    <a href="https://github.com/csivitu/slot-booking-app/issues">Report Bug</a>
     ·
-    <a href="https://github.com/csivitu/Template/issues">Request Feature</a>
+    <a href="https://github.com/csivitu/slot-booking-app/issues">Request Feature</a>
   </p>
 </p>
 
@@ -45,18 +45,13 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
-Here's a blank template to get started:
-**To avoid retyping too much info. Do a search and replace with your text editor for the following:**
-`Template`
+**slot-booking-app** is a smart solution to arrange discord meets for mass events like CCS. It automatically generate personalized discord invite links to achieve the same.
 
 
 ### Built With
 
-* []()
-* []()
-* []()
+* [Node](https://nodejs.org/en/)
+* [Mongoose](https://www.npmjs.com/package/mongoose)
 
 
 
@@ -65,40 +60,55 @@ Here's a blank template to get started:
 
 To get a local copy up and running follow these simple steps.
 
-### Prerequisites
-
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-```sh
-npm install npm@latest -g
-```
-
 ### Installation
  
 1. Clone the repo
 ```sh
-git clone https://github.com/csivitu/Template.git
+git clone https://github.com/csivitu/slot-booking-app.git
 ```
 2. Install NPM packages
 ```sh
 npm install
 ```
 
+#### Using yarn
+
+```sh
+yarn install
+```
+
+**Note:**  If installing the packages with npm you get errors use yarn to install them.
 
 
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+To run this project locally, you can run the following command. 
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+#### Using npm
+```sh
+npm start
+```
+#### Using yarn
 
+```sh
+yarn start
+```
+
+## API Endpoints
+
+|Request Type| Route | Function |
+|:-----------:|:------:|:---------:|
+| POST | / | Book a slot and generate an invite link |
+| GET | / | Get invite link and slot details of a registered user |
+| GET | /slots | Get slot details |
+| POST | /reset | Initialize or reset the slots |
 
 
 <!-- ROADMAP -->
 ## Roadmap
 
-See the [open issues](https://github.com/csivitu/Template/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/csivitu/slot-booking-app/issues) for a list of proposed features (and known issues).
 
 
 
@@ -127,5 +137,5 @@ Distributed under the MIT License. See [`LICENSE`](./LICENSE) for more informati
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [csivitu-shield]: https://img.shields.io/badge/csivitu-csivitu-blue
 [csivitu-url]: https://csivit.com
-[issues-shield]: https://img.shields.io/github/issues/csivitu/Template.svg?style=flat-square
-[issues-url]: https://github.com/csivitu/Template/issues
+[issues-shield]: https://img.shields.io/github/issues/csivitu/slot-booking-app.svg?style=flat-square
+[issues-url]: https://github.com/csivitu/slot-booking-app/issues
