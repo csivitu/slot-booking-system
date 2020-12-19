@@ -1,11 +1,8 @@
 import mongoose from 'mongoose';
-import joigoose from 'joigoose';
 import Joi from 'joi';
 
-const Joigoose = joigoose(mongoose);
-
 const joiSlotSchema = Joi.object({
-	day: Joi.string().required().meta({ unique: true }),
+	day: Joi.string().required(),
 	slots: Joi.array().items(Joi.object({
 		duration: Joi.string().required(),
 		maxRegs: Joi.number().required(),
@@ -13,20 +10,51 @@ const joiSlotSchema = Joi.object({
 	})).required(),
 });
 
-const joiUserSchema = Joi.object({
-	regNo: Joi.string().required().meta({ unique: true }),
-	inviteLink: Joi.string().required().meta({ unique: true }),
-	day: Joi.string().required(),
-	slot: Joi.string().required(),
+const mongooseSlotSchema = new mongoose.Schema({
+	day: {
+		type: String,
+		required: true,
+		unique: true,
+	},
+	slots: {
+		type: [{
+			duration: {
+				type: String,
+				required: true,
+			},
+			maxRegs: {
+				type: Number,
+				required: true,
+			},
+			regCount: {
+				type: Number,
+				default: 0,
+			},
+		}],
+		required: true,
+	},
 });
 
-const mongooseSlotSchema = new mongoose.Schema(
-	Joigoose.convert(joiSlotSchema),
-);
-
-const mongooseUserSchema = new mongoose.Schema(
-	Joigoose.convert(joiUserSchema),
-);
+const mongooseUserSchema = new mongoose.Schema({
+	regNo: {
+		type: String,
+		required: true,
+		unique: true,
+	},
+	inviteLink: {
+		type: String,
+		required: true,
+		unique: true,
+	},
+	day: {
+		type: String,
+		required: true,
+	},
+	slot: {
+		type: String,
+		required: true,
+	},
+});
 
 const Slot = mongoose.model('Slot', mongooseSlotSchema);
 const User = mongoose.model('User', mongooseUserSchema);
