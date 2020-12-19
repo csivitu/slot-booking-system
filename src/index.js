@@ -3,11 +3,13 @@ import './db/init.js';
 import express from 'express';
 import bodyParser from 'body-parser';
 import authorize from 'csi-accounts-express';
+import cors from 'cors';
 import registerRouter from './routes/register.js';
 import resetRouter from './routes/reset.js';
 
 const app = express();
 
+app.use(cors());
 app.use(bodyParser.json());
 
 app.use(authorize({
