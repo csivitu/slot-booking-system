@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 
 app.use(authorize({
 	secret: process.env.JWT_SECRET,
-	scope: ['ccs'],
+	scope: ['r2'],
 
 }));
 
