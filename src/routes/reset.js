@@ -37,4 +37,57 @@ router.post('/', async (req, res) => {
 // 	}],
 // };
 
+// {
+//     "data":[
+//       {
+//         "day":"20 dec 2020",
+//         "slots":[
+//           {"duration":"11 AM - 12 PM","maxRegs":10},
+//           {"duration":"2 PM - 3 PM","maxRegs":10},
+//           {"duration":"3 PM - 4 PM","maxRegs":10},
+//           {"duration":"4 PM - 5 PM","maxRegs":10},
+//           {"duration":"5 PM - 6 PM","maxRegs":10},
+//           {"duration":"6 PM - 7 PM","maxRegs":10},
+//           {"duration":"7 PM - 8 PM","maxRegs":10}
+//         ]
+//       },
+//       {
+//         "day":"21 dec 2020",
+//         "slots":[
+//           {"duration":"11 AM - 12 PM","maxRegs":10},
+//           {"duration":"2 PM - 3 PM","maxRegs":10},
+//           {"duration":"3 PM - 4 PM","maxRegs":10},
+//           {"duration":"4 PM - 5 PM","maxRegs":10},
+//           {"duration":"5 PM - 6 PM","maxRegs":10},
+//           {"duration":"6 PM - 7 PM","maxRegs":10},
+//           {"duration":"7 PM - 8 PM","maxRegs":10}
+//         ]
+//       },
+//       {
+//         "day":"22 dec 2020",
+//         "slots":[
+//           {"duration":"11 AM - 12 PM","maxRegs":10},
+//           {"duration":"2 PM - 3 PM","maxRegs":10},
+//           {"duration":"3 PM - 4 PM","maxRegs":10},
+//           {"duration":"4 PM - 5 PM","maxRegs":10},
+//           {"duration":"5 PM - 6 PM","maxRegs":10},
+//           {"duration":"6 PM - 7 PM","maxRegs":10},
+//           {"duration":"7 PM - 8 PM","maxRegs":10}
+//         ]
+//       },
+//       {
+//         "day":"23 dec 2020",
+//         "slots":[
+//           {"duration":"11 AM - 12 PM","maxRegs":10},
+//           {"duration":"2 PM - 3 PM","maxRegs":10},
+//           {"duration":"3 PM - 4 PM","maxRegs":10},
+//           {"duration":"4 PM - 5 PM","maxRegs":10},
+//           {"duration":"5 PM - 6 PM","maxRegs":10},
+//           {"duration":"6 PM - 7 PM","maxRegs":10},
+//           {"duration":"7 PM - 8 PM","maxRegs":10}
+//         ]
+//       }
+//     ]
+// }
+
 export default router;
